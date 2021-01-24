@@ -14,7 +14,12 @@ services:
 
   spark-driver:
     image: spark-zep
-    command: /bin/bash -c "/usr/zeppelin/zeppelin-0.9.0-bin-all/bin/zeppelin-daemon.sh start &&  tail -f /dev/null"
+    command: 
+      - /bin/bash 
+      - -c 
+      - |
+         /usr/zeppelin/zeppelin-0.9.0-bin-all/bin/zeppelin-daemon.sh start 
+         tail -f /dev/null
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077
