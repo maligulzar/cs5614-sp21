@@ -45,34 +45,49 @@ Once the docker image is built, you can start the cluster using docker-compose.`
 This command will initiate the cluster using the recipe `docker-compose.yml`. 
 
 ```bash
-Creating network "cs5614-sp21_default" with the default driver
-Creating cs5614-sp21_spark-driver_1 ... done
-Creating cs5614-sp21_spark-worker_1 ... done
-Creating cs5614-sp21_spark_1        ... done
-Attaching to cs5614-sp21_spark_1, cs5614-sp21_spark-driver_1, cs5614-sp21_spark-worker_1
-spark_1         |  17:51:48.87 
-spark_1         |  17:51:48.88 Welcome to the Bitnami spark container
-spark_1         |  17:51:48.89 Subscribe to project updates by watching https://github.com/bitnami/bitnami-docker-spark
-spark_1         |  17:51:48.89 Submit issues and feature requests at https://github.com/bitnami/bitnami-docker-spark/issues
-spark-worker_1  |  17:51:48.89 
-spark_1         |  17:51:48.89 
-spark_1         |  17:51:48.89 INFO  ==> ** Starting Spark setup **
-spark-worker_1  |  17:51:48.89 Welcome to the Bitnami spark container
-spark-worker_1  |  17:51:48.89 Subscribe to project updates by watching https://github.com/bitnami/bitnami-docker-spark
-spark-worker_1  |  17:51:48.90 Submit issues and feature requests at https://github.com/bitnami/bitnami-docker-spark/issues
-spark-worker_1  |  17:51:48.90 
-spark-worker_1  |  17:51:48.90 INFO  ==> ** Starting Spark setup **
-spark-driver_1  | Log dir doesn't exist, create /usr/zeppelin/zeppelin-0.9.0-bin-all/logs
-spark-driver_1  | Pid dir doesn't exist, create /usr/zeppelin/zeppelin-0.9.0-bin-all/run
-spark_1         |  17:51:48.96 INFO  ==> Generating Spark configuration file...
-spark-worker_1  |  17:51:48.96 INFO  ==> Generating Spark configuration file...
+Starting cs5614-sp21_spark_1        ... done
+Starting cs5614-sp21_spark-worker_1 ... done
+Starting cs5614-sp21_spark-driver_1 ... done
+Creating cs5614-sp21_spark-worker_2 ... done
+Creating cs5614-sp21_spark-worker_3 ... done
+Attaching to cs5614-sp21_spark-driver_1, cs5614-sp21_spark_1, cs5614-sp21_spark-worker_1, cs5614-sp21_spark-worker_2, cs5614-sp21_spark-worker_3
+spark-worker_1  |  18:07:38.20 
+spark-worker_2  |  18:07:39.06 
+spark-worker_1  |  18:07:38.20 Welcome to the Bitnami spark container
 spark-driver_1  | Zeppelin start                           [  OK  ]
-spark_1         |  17:51:48.97 INFO  ==> ** Spark setup finished! **
-spark_1         | 
-spark-worker_1  |  17:51:48.97 INFO  ==> ** Spark setup finished! **
+spark_1         |  18:07:38.45 
+spark-worker_2  |  18:07:39.06 Welcome to the Bitnami spark container
+spark-worker_1  |  18:07:38.21 Subscribe to project updates by watching https://github.com/bitnami/bitnami-docker-spark
+spark-worker_2  |  18:07:39.06 Subscribe to project updates by watching https://github.com/bitnami/bitnami-docker-spark
+spark_1         |  18:07:38.45 Welcome to the Bitnami spark container
+spark-worker_1  |  18:07:38.21 Submit issues and feature requests at https://github.com/bitnami/bitnami-docker-spark/issues
+spark_1         |  18:07:38.46 Subscribe to project updates by watching https://github.com/bitnami/bitnami-docker-spark
+spark-worker_2  |  18:07:39.07 Submit issues and feature requests at https://github.com/bitnami/bitnami-docker-spark/issues
+spark-worker_1  |  18:07:38.21 
+spark-worker_1  |  18:07:38.22 INFO  ==> ** Starting Spark setup **
+spark_1         |  18:07:38.47 Submit issues and feature requests at https://github.com/bitnami/bitnami-docker-spark/issues
+spark-worker_2  |  18:07:39.07 
+spark-worker_1  |  18:07:38.26 INFO  ==> Detected mounted configuration file...
+spark-worker_2  |  18:07:39.08 INFO  ==> ** Starting Spark setup **
+spark_1         |  18:07:38.47 
+spark-worker_1  |  18:07:38.26 INFO  ==> ** Spark setup finished! **
+spark_1         |  18:07:38.48 INFO  ==> ** Starting Spark setup **
+spark_1         |  18:07:38.54 INFO  ==> Detected mounted configuration file...
 spark-worker_1  | 
-spark-worker_1  |  17:51:48.99 INFO  ==> ** Starting Spark in worker mode **
-spark_1         |  17:51:48.99 INFO  ==> ** Starting Spark in master mode **
+spark_1         |  18:07:38.55 INFO  ==> ** Spark setup finished! **
+spark-worker_1  |  18:07:38.28 INFO  ==> ** Starting Spark in worker mode **
+spark_1         | 
+spark_1         |  18:07:38.58 INFO  ==> ** Starting Spark in master mode **
+spark-worker_1  | starting org.apache.spark.deploy.worker.Worker, logging to /opt/bitnami/spark/logs/spark--org.apache.spark.deploy.worker.Worker-1-5d65c41416ed.out
+spark_1         | starting org.apache.spark.deploy.master.Master, logging to /opt/bitnami/spark/logs/spark--org.apache.spark.deploy.master.Master-1-307676a57555.out
+spark-worker_1  | Spark Command: /opt/bitnami/java/bin/java -cp /opt/bitnami/spark/conf/:/opt/bitnami/spark/jars/* -Xmx1g org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://spark:7077
+spark_1         | Spark Command: /opt/bitnami/java/bin/java -cp /opt/bitnami/spark/conf/:/opt/bitnami/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host 307676a57555 --port 7077 --webui-port 8080
+spark_1         | ========================================
+spark-worker_1  | ========================================
+spark-worker_2  |  18:07:39.19 INFO  ==> Generating Spark configuration file...
+spark-worker_3  |  18:07:39.19 
+spark-worker_3  |  18:07:39.19 Welcome to the Bitnami spark container
+
 ```
 
 Give this step a few seconds to set up everything and start all the nodes.
